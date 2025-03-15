@@ -1,11 +1,7 @@
 # Web-Dev-Journey
 This repository is about my journey to web development
 
-# Path
-Absolutely! Here’s a **detailed and structured** roadmap to learning JavaScript from absolute basics to advanced concepts, covering **every** essential topic in depth.  
-
----
-
+# JavaScript Path
 # **📌 JavaScript Learning Path (Step by Step)**  
 This path is designed to take you from beginner to advanced level in JavaScript. **Each stage builds on the previous one**, so follow it step by step.
 
@@ -172,6 +168,4 @@ This path is designed to take you from beginner to advanced level in JavaScript.
 ---
 
 ### **🎯 Ready to Start?**
-🚀 Follow this roadmap step by step, and you’ll **master JavaScript in no time!**  
-
-Would you like resources, project ideas, or a custom study plan based on your goals? 😊
+🚀 Follow this roadmap step by step, and you’ll **master JavaScript in no time!** 
