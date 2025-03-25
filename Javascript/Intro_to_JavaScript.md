@@ -1,4 +1,4 @@
-### JavaScript
+# JavaScript
 
 ## Introduction
 
@@ -68,4 +68,4 @@
 - While JavaScript is primarily executed in web browsers and is also used on the server side (with environments like Node.js).
 
 - Java code is compiled into bytecode, which runs on the JVM.
-- JavaScript code is executed directly by the interpreter in the browser (Node.js).
+- JavaScript code is executed directly by the interpreter in the browser (or Node.js).
