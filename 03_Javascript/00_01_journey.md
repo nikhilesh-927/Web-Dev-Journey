@@ -1,4 +1,4 @@
-# 📌 JavaScript Learning Path (Step by Step)**  
+# **📌 JavaScript Learning Path (Step by Step)**  
 This path is designed to take you from beginner to advanced level in JavaScript. **Each stage builds on the previous one**, so follow it step by step.
 
 ---
