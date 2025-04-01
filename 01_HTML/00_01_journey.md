@@ -1,4 +1,4 @@
-# **1. 📌 HTML Learning Path (Step by Step)**
+# 📌 HTML Learning Path (Step by Step)**
 This roadmap will take you from beginner to advanced level in **HTML**. Since **HTML** is the backbone of web development, it's important to **master every concept** step by step.
 
 ---

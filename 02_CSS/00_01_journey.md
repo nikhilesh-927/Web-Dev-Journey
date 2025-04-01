@@ -1,4 +1,4 @@
-# **2. 📌 CSS Learning Path (Step by Step)**  
+# 📌 CSS Learning Path (Step by Step)**  
 This roadmap will take you from **beginner to advanced** level in **CSS**, ensuring you understand every key concept in depth.
 
 ---
