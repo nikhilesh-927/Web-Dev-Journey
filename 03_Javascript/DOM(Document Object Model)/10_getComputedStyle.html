@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            background-color: red;
+            font-size: 12px;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="username" placeholder="username" 
+    >
+
+    <script>
+        let inputBox = document.getElementById("username");
+        console.log(inputBox.style);//CSSStyleDeclaration {0: 'background-color', 1: 'font-size', accentColor: '', additiveSymbols: '', alignContent: '', alignItems: '', alignSelf: '', …}
+
+        console.log(inputBox.style.backgroundColor);//red
+
+        console.log(inputBox.style.fontSize);//20px
+
+        inputBox.style.padding = "10px";
+
+        console.log(inputBox);
+
+        //<input type="text" id="username" placeholder="username" style="background-color: red; font-size: 20px; padding: 10px;">
+
+        inputBox.style.cssText = "width: 200px";
+
+        console.log(inputBox);
+        //<input type="text" id="username" placeholder="username" style="width: 200px;">
+
+        //cssText will override the existing css text
+
+        //if we want to keep the existing css text so we can use concatenate
+        //we will use + before = after cssText like this : ...cssText += ..
+
+        /*
+        inputBox.style.cssText += "background-color: red; font-size: 20px";
+
+        console.log(inputBox);
+        //<input type="text" id="username" placeholder="username" style="width: 200px; background-color: red; font-size: 20px;">
+            
+        */
+
+        /* syntax of getComputedStyle() : window.getComputedStyle(element, pseudoElement)*/
+
+        console.log(window.getComputedStyle(inputBox));
+        //it will give full css style 
+
+        console.log(window.getComputedStyle(inputBox).fontSize);//12px
+
+        console.log(window.getComputedStyle(inputBox).backgroundColor);//rgb(255, 0, 0)
+        
+        console.log(window.getComputedStyle(inputBox).width);//200px
+        
+
+    </script>
+</body>
+</html>
+
+<!--
+Manipulating elements styles : to manipulate style of an html element
+we have the property called style. We use this property to get or set
+the inline property of an html element.
+
+we can use cssText also to adding style to an html element.
+it will override the existing css text.
+
+getComputedStyle() method : we can read the all the css properties applied 
+to an element.
+-->

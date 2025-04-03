@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="title">
+        <p>Welocme to amazing world! 1</p>
+        <p class="second">Welocme to amazing world! 2</p>
+        <p>Welocme to amazing world! 3</p>
+        <p>Welocme to amazing world! 4</p>
+    </div>
+
+    <script>
+        let second = document.querySelector(".second");
+        console.log(second);//<p class="second">Welocme to amazing world! 2</p>
+
+        //siblings
+ 
+        console.log(second.previousElementSibling);
+        //<p>Welocme to amazing world! 1</p>
+
+        console.log(second.nextElementSibling);
+        //<p>Welocme to amazing world! 3</p>
+        
+    </script>
+</body>
+</html>
+
+<!--
+
+Select the next siblings, previous siblings of an element
+
+-->

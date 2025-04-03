@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="menu">
+        <li>Home</li>
+        <li>About</li>
+        <li>Blog</li>
+        <li style="display: none;">Projects</li>
+    </ul>
+    <script>
+        let menu = document.getElementById("menu");
+
+        let list = document.createElement("li");
+        list.innerHTML = "Contact";
+
+        menu.appendChild(list);
+
+        console.log(menu);
+        /*
+        <ul id="menu">
+        <li>Home</li>
+        <li>About</li>
+        <li>Blog</li>
+        <li>Projects</li>
+        <li>Contact</li>
+        </ul>
+        */
+
+        /* So the newly created element will be appended
+        at the end of that list */
+
+        //we only want text in menu
+
+        console.log(menu.textContent);
+/*
+        Home
+        About
+        Blog
+        Projects
+    Contact
+    */
+   /* 
+   it will ignore the tags and show only text content
+     */
+
+     //let's see what innerText do
+
+     console.log(menu.innerText);
+
+     /*
+     Home
+About
+Blog
+Projects
+Contact
+     */
+
+     /* 
+     Only differnce between textContent and innerHTML is
+     that innerHTML shows element with CSS also.
+      */
+
+      /* 
+      After adding display: none style to last li tag
+       */
+        /*
+            Home
+        About
+        Blog
+        (projects is hidden)
+        Contact
+            */
+
+            menu.textContent = "Hello!";
+
+            //the above line will remove all contents from
+            //web page and show only Hello!
+
+            menu.innerHTML = "<h1>Hello!</h1>";
+            //it will show Hello! in h1 heading (big heading)
+
+            //but what happen if we add it to textContent
+
+            menu.textContent = "<h1>Hello!</h1>";
+
+            //it will show <h1>Hello!</h1> (it does not accept html code, it only shows text)
+
+        
+    </script>
+</body>
+</html>
+
+<!--
+
+appendChild() method : we use the appendChild() method to add 
+a node to the end of the list of child nodes of a specified parent node.
+
+The appendChild() can be used to move an existing child node to the 
+new position within the document.
+
+textContent : To get the text content of a node and its 
+descendants, you use the textContent property.
+
+innerHTML : it is used to add the HTML code to webpage
+
+-->

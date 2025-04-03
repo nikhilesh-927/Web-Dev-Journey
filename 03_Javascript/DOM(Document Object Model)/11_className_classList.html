@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1 id="title" class="main message">Ironman</h1>
+
+    <script>
+        let title = document.getElementById("title");
+        
+        console.log(title.className);//main message
+
+        title.className = "new";
+
+        //the above code will override the all class name
+
+        console.log(title.className);//new
+
+        //if we want to add new className and keep the previous
+        //class values also
+
+        title.className += " main message";
+
+        console.log(title.className);//new main message
+        
+        console.log(title.classList);
+        /*  DOMTokenList(3)0: "new"1: "main"2: "message"length: 3value: "new main message"[[Prototype]]: DOMTokenList  */
+
+        title.classList.add("new1");
+
+        console.log(title);//h1#title.new.main.message.new1
+
+        title.classList.add("new2", "new3");
+        //<h1 id="title" class="new main message new1 new2 new3">Ironman</h1>
+
+        title.classList.remove("message");
+        //<h1 id="title" class="new main new1 new2 new3">Ironman</h1>
+
+        title.classList.remove("new", "new1");
+        //<h1 id="title" class="main new2 new3">Ironman</h1>
+
+        title.classList.replace("main", "message");
+        //<h1 id="title" class="message new2 new3">Ironman</h1>
+
+        console.log(title.classList.contains("message"));//true
+        console.log(title.classList.contains("message1"));//false
+
+        title.classList.toggle("message"); //it will remove message
+        //<h1 id="title" class="new2 new3">Ironman</h1>
+
+        title.classList.toggle("newToggle");
+        //since newToggle is not present there, it will add newToggle there
+
+        console.log(title);//h1#title.new2.new3.newToggle
+        
+    </script>
+</body>
+</html>
+
+<!--
+className property : it return a list of classes associated 
+with an html element.
+
+classList property : it returns a list of css classes. We can
+also use to add a class or remove a class.
+-->

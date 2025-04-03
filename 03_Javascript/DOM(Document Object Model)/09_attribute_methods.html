@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="username" placeholder="username">
+    <!--
+    in above type, id, placeholder are attributes
+    and "text", "username", "username" are their respective attribute values
+    -->
+
+    <script>
+        let inputBox = document.getElementById("username");
+
+        console.log(inputBox.attributes);//NamedNodeMap {0: type, 1: id, 2: placeholder, type: type, id: id, placeholder: placeholder, length: 3}
+ 
+        console.log(inputBox.getAttribute("type"));//text
+        
+        console.log(inputBox.getAttribute("placeholder"));//username
+
+        inputBox.setAttribute("class", "user");
+
+        console.log(inputBox);
+        //<input type="text" id="username" placeholder="username" class="user">
+
+        console.log(inputBox.hasAttribute("class"));//true
+
+        console.log(inputBox.hasAttribute("value"));//false
+        
+        inputBox.removeAttribute("class");
+
+        console.log(inputBox);
+
+        //<input type="text" id="username" placeholder="username">
+
+       // we removed class attribute
+        
+        
+    </script>
+</body>
+</html>
+
+<!--
+
+Attribute Methods:
+
+getAttribute() method : we use this to check whether a particular
+attribute is present or not.
+
+setAttribute() method : we use it set or change the attributes of an
+html element.
+
+hasAttribute() method : it will tells us whether an specific
+attribute is available on webpage or not. It will result in true or false.
+
+removeAttribute() method : it removes an attribute from an html element.
+
+-->

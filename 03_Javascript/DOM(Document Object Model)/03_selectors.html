@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- comment -->
+    <div>
+        <p id="message">JavaScript DOM</p>
+
+        <!-- Let's duplicate above -->
+         <p id="message">JavaScript only</p>
+         <!-- 
+         In above if a user try to access document.getElementById("message"),
+         it will return the first occurence of element that has id = "message"
+          -->
+
+          <input type="radio" name="language" value="JS">
+          <input type="radio" name="language" value="Python">
+
+          <h1>first heading</h1>
+          <h1>second heading</h1>
+          <h1>third heading</h1>
+          <h1>fourth heading</h1>
+
+          <h2 class="message">fifth heading</h2>
+          <h2 class="message">sixth heading</h2>
+          <h2 class="message">seventh heading</h2>
+            
+          <h3 class="message">eighth heading</h3>
+          <div id="container">
+            <h3 class="message">ninth heading</h3>
+            <h3 class="message">tenth heading</h3>
+          </div>
+    </div>
+
+    <script>
+        let msg = document.getElementById("message"); //msg will hold "JavaScript DOM"
+        
+        console.log(msg);//<p id="message">JavaScript DOM</p>
+
+        let msg2 = document.getElementById("messag2"); //msg2 will hold null
+
+        console.log(msg2);//null
+
+        let msg3 = document.getElementById("message") //it will hold JavaScript DOM
+
+        console.log(msg3); //<p id="message">JavaScript DOM</p>
+
+        let btn = document.getElementsByName("language");
+
+        console.log(btn); //NodeList(2) [input, input]
+
+        let heading = document.getElementsByTagName("h1");
+
+        console.log(heading);//HTMLCollection(4) [h1, h1, h1, h1]
+        
+        let msg4 = document.getElementsByClassName("message");
+
+        console.log(msg4); //HTMLCollection(3) [h2.message, h2.message, h2.message]
+        
+
+        let cont = document.getElementById("container");
+
+        let msg5 = cont.getElementsByClassName("message");
+
+        console.log(msg5); //HTMLCollection(2) [h3.message, h3.message]
+
+        //as we are using getElementsByClassName on cont only
+        //means we will get elements that are inside that cont
+        //and cont is element with id = "container"
+
+        let msg6 = document.querySelector(".message"); //since message is a class name; we use .message
+        //if message was id we would have used #message
+
+        console.log(msg6); //<h2 class="message">fifth heading</h2> 
+
+        //querySelector() returns only first element
+
+        let msg7 = document.querySelectorAll(".message");
+
+        console.log(msg7);//NodeList(6) [h2.message, h2.message, h2.message, h3.message, h3.message, h3.message]
+
+        let cont1 = document.getElementById("container");
+
+        let msg8 = cont1.querySelectorAll(".message");
+    
+        let msg9 = cont1.querySelector(".message");
+        
+        console.log(msg8);//NodeList(2) [h3.message, h3.message]
+        
+        console.log(msg9);//<h3 class="message">ninth heading</h3>
+
+        let msg10 = document.querySelectorAll("#container");//select the element with id
+
+        console.log(msg10);//NodeList [div#container]
+
+        let msg11 = document.querySelectorAll("div");
+
+        console.log(msg11); //NodeList(2) [div, div#container]
+        
+        let msg12 = document.querySelectorAll("div h3"); //multiple elements
+
+        console.log(msg12);//NodeList(3) [h3.message, h3.message, h3.message]
+        
+    </script>
+</body>
+</html>
+
+<!-- Selecting methods -->
+
+<!-- 
+
+1. getElementById() method : the getElementById() method
+returns an Element object that represents an HTML element
+
+2. getElementsByName() method : elements in an html document
+may have a name attribute so we can use getElementByName()
+method to access those elements (it returns list of nodes)
+
+3. getElementsByTagName() method : this method accepts a tag
+name and returns a live HTMLCollection of elements.
+
+4. getElementsByClassName() method : this method returns an array-like
+of objects of the child elements with a specified class name.
+
+5. querySelector() : this method allows us to select the
+first element that matches one or more CSS selectors.
+
+6. querySelectorAll() : it is similar to querySelector but 
+only difference is it returns all the elements that mathces
+one or more CSS selectors.
+-->

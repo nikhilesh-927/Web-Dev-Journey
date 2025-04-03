@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="menu">
+        <li>Home</li>
+        <li>About</li>
+        <li>Blog</li>
+    </ul>
+
+    <script>
+        let menu = document.getElementById("menu");
+
+        /* after() method syntax : Element.after(node);
+        we can add multiple nodes with after() method
+        Element.after(node1, node2, node3, ...)
+
+        we can add multiple strings as well
+        Element.after(str1, str2, str3, ...)
+         */
+        
+        /* append() method syntax : parentNode.append(newNodes); */
+
+        /* prepend() method syntax : parentNode.prepend(newNodes) */
+
+        /* insertAdjacentHTML() method syntax : element.insertAdjacentHTML(positionName, text); */
+
+        menu.insertAdjacentHTML("beforeend", "<li>contact</li>");
+        /* 
+        Home
+        About
+        Blog
+        contact //this is added
+         */
+
+         menu.insertAdjacentHTML("afterbegin", "<li>beforehome</li>");
+         /* 
+         beforehome //this is added
+        Home
+        About
+        Blog
+        contact
+         */
+
+         /* replaceChild() syntax : parentNode.replaceChild(newChild, oldChild); */
+
+        /* cloneNode() syntax : let newNode = originalNode.cloneNode(); */
+
+        let newNode = menu.cloneNode();
+
+        console.log(newNode);//<ul id="menu"></ul>
+
+        //if we pass true as argument inside childNode() like this childNode(true)
+        //it will clone the children also of the element
+
+        newNode = menu.cloneNode(true);
+
+        console.log(newNode);
+        /*
+        <ul id="menu"><li>beforehome</li>
+        <li>Home</li>
+        <li>About</li>
+        <li>Blog</li>
+    <li>contact</li></ul>
+    */
+
+    /* by default argumennt passed is false */
+
+    /* removeChild() syntax : parentNode.removeChild(childNode); */
+
+    menu.removeChild(menu.lastElementChild);
+
+    console.log(menu);//console shows 4 child elements and last child
+    //element contact is removed
+
+    /* insertBefore() syntax : parentNode.insertBefore(newNode, exisingNode); */
+
+    menu.insertBefore(newNode, menu.firstElementChild);
+
+    console.log(menu);//
+    // <ul id="menu">
+    // <ul id="menu">
+    // <li>beforehome</li>
+    //     <li>Home</li>
+    //     <li>About</li>
+    //     <li>Blog</li>
+    // <li>contact</li>
+    // </ul><li>beforehome</li>
+    //     <li>Home</li>
+    //     <li>About</li>
+    //     <li>Blog</li>
+    // </ul>
+
+    </script>
+</body>
+</html>
+
+<!--
+
+after() method : We can use after() method to indert one or more nodes 
+after the element.
+
+append() method : append() method is similar to appendChild() but
+with the append() method we can add multiple elements.
+
+prepend() method : it will add element as a first child of a parent node.
+
+insertAdjacentHTML() method : by using this method we can add element 
+before start or end of the element or after start or end of the element
+
+replaceChild() method : replaceChild() method is used to replace
+the child element with the new one.
+
+cloneNode() method : we can use cloneNode() method to clone an element
+
+removeChild() method : to remove a child element of a node we can use
+removeChild() method.
+
+insertBefore() method : We can use insertBefore() method to insert a new
+node before an existing node as a child node of a parent node.
+-->

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="title"><p class="text">Welcome to amazing world! 1</p>
+        <p class="text">Welcome to amazing world! 2</p>
+        <p class="text">Welcome to amazing world! 3</p>
+        <p class="text">Welcome to amazing world! 4</p>
+    </div>
+
+    <script>
+        let txt = document.querySelector(".text");
+        console.log(txt); //<p class="text">Welcome to amazing world!</p> (it's child)
+        console.log(txt.parentNode);//<div id="title">…</div> (it's parent)
+        
+        let parent = document.querySelector(".title");
+        console.log(parent);//<div class="title">…</div>
+        console.log(parent.firstChild);//#text (first child)
+        //it is showing #text because empty space is also taken as child node
+        //after removing space
+        //<p class="text">Welcome to amazing world! 1</p>
+
+        //let's show first element child on console
+
+        console.log(parent.firstElementChild);
+        //<p class="text">Welcome to amazing world! 1</p>
+
+        //last element child
+
+        console.log(parent.lastElementChild);
+        //<p class="text">Welcome to amazing world! 4</p>
+
+        //all child nodes
+
+        console.log(parent.childNodes);//NodeList(8) [p.text, text, p.text, text, p.text, text, p.text, text]
+        
+        
+    </script>
+</body>
+</html>
+
+<!-- 
+Traversing elements :
+
+To get the parent node of a specified node in the DOM tree,
+we can use the parentNode property
+
+Getting child elements of a node in JavaScript
+
+-->

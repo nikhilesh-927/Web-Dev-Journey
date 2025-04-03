@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="container">
+        <button type="button" onclick="console.log('Button Clicked!')">Click Here</button>
+        <!-- When we click on the above button it will log Button Clicked! on the console-->
+         <!-- Calling a function through button click -->
+          <button type="button" onclick="displayMsg()">Click Me!</button>
+          <!-- Button Clicked and function called! -->
+
+          <button type="button" onclick="console.log(event)">Click Me Event!</button>
+          <!-- PointerEvent {isTrusted: true, pointerId: 1, width: 1, height: 1, pressure: 0, …} -->
+
+          <button type="button" onclick="console.log(event.type)">Click for event type</button>
+          <!-- click -->
+
+          <button type="button" onclick="console.log(event.target)">Click me for event target</button>
+          <!-- output : <button type="button" onclick="console.log(event.target)">Click me for event target</button> -->
+
+          <button type="button" onclick="console.log(this)">Click for this!</button>
+          <!-- output : <button type="button" onclick="console.log(this)">Click for this!</button> -->
+
+          <button id="btn" type="button" onclick="console.log(this.id)">Click for id</button>
+          <!-- btn -->
+
+          <button id="btn" type="button" onclick="console.log(id)">Click for direct id</button>
+          <!-- btn -->
+
+          <button id="btn" type="button" onclick="console.log(type)">Click for type</button>
+          <!-- button -->
+
+          <button id="btn1">Click Here</button>
+
+          <button id="btn2">Click Here</button>
+
+          <button id="btn3">Click Here</button>
+
+          <button id="btn4">Click Here</button>
+
+          <button id="btn5">Click Here</button>
+
+          <button id="btn6">Click Here</button>
+    </div>
+    
+    <script>
+        function displayMsg(){
+            console.log("Button Clicked and function called!");
+        }
+
+        let btn = document.getElementById("btn1");
+        btn.onclick = function(){
+            console.log("Button clicked!");
+        }
+        //Button clicked!
+
+        let btn2 = document.getElementById("btn2");
+        btn2.onclick = function(){
+            console.log(this.id);
+            
+        }
+        //btn2
+
+        let btn3 = document.getElementById("btn3");
+        btn2.onclick = null;
+        //it will remove event handler
+
+        /* 
+        addEventListener() syntax:
+        addEventListener(event, function, useCapture)
+        useCapture is optional by default its value is false
+         */
+
+         let btn4 = document.getElementById("btn4");
+         btn4.addEventListener('click', function(){console.log("Button Clicked!");
+         })
+         //Button Clicked!
+
+         let btn5 = document.getElementById("btn5");
+         btn5.addEventListener('click', function(event){
+            console.log(event);//PointerEvent {...}
+            
+            console.log(event.type);//click
+            
+         })
+
+         let btn6 = document.getElementById("btn6");
+
+         function displayMg(){
+            console.log("Button Clicked!");
+         }
+
+         btn6.addEventListener('click', displayMg);
+         //Button Clicked!
+
+         //let's remove event listener
+
+         btn6.removeEventListener('click', displayMg);
+
+         //it will remove the event listener
+       
+    </script>
+
+</body>
+</html>
+
+<!--
+JavaScript Events : an event is an action that occurs in a web browser
+When we click on a web page it is a click event, when we move cursor
+over the web page it is a mouse move event and when a webpage loads
+it is a load event.
+
+There are two events models : 1. event bubbling and 2. event capturing 
+
+for example : 
+
+here is an example code :
+
+    <div id="container">
+        <button type="button">Click Here</button>
+    </div>
+
+    when we click on the button, the click starts from the 
+    button then goes to div and then goes to body and then goes to 
+    html and then goes to document.
+
+    Event bubbling : event starts at the most specific element and flows 
+    towars least specific element.
+
+    But when event starts from least specific element like document and 
+    then goes to html, then body and then div and then button(target element)
+
+    Event capturing : Event starts at least specific element and flows toward the 
+    most specific element.
+
+    We may respond to these events by creating event handlers.
+
+    Event handlers : An event handler is a piece of code that will
+    be executed when the event occurs.
+    Event handler is also known as event listener.
+
+    There are three ways to assign event handlers : 
+
+    1. HTML Event handler attributes
+
+    When an event occurs, the web browser passed an Event object to the event handler
+
+    we can use the "this" keyword inside the event handler.
+
+    "this" keyword inside the event handler refers to target element.
+
+    2. Adding event handler name is javascript
+
+    3. In javascript we have two methods with the name 
+    addEventListener() and removeEventListener()
+
+    addEventListener() method will register an event handler
+
+    removeEventListener() method will remove an event handler
+
+    Important JavaScript events:
+
+    1. mousemove : Event fires repeatedly when you move the mouse cursor around the element
+    2. mousedown : Event fires when you press the mouse button on the element
+    3. mouseup: Event fires when you release the mouse button on the element.
+    4. mouseover : Event fires when the cursor move from outside to inside the boundaries of the 
+    element
+    5. mouseout : Event fires when the cursor is over an element and then moves
+    to another element.
+    6. keydown : Event fires when you press a key on the keyboard and fires
+    repeatedly while you're holding down the key.
+    7. keyup : Event fires when you release a key on the keyboard.
+    8. keypress : Event fires when you press a character on keyboard
+    like a, b, c... it fires repeatedly while you hold down the key
+    on the keyboard.
+    9. scroll : Event fires when you scroll a dcument or an elemtn, the scroll events fire.
+-->

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        let div = document.createElement("div");
+
+        console.log(div);//<div></div>
+
+        div.innerHTML = "<p>Welcome to amazing world!</p>";
+        console.log(div);
+        //<div>
+        // <p>Welcome to amazing world!</p>
+        //</div>
+
+        //Adding elements on webpage
+
+        document.body.appendChild(div);
+
+        console.log(div);
+        //after adding element to our web page 
+        //we have text like this : Welcome to amazing world!
+        //on our webpage
+
+        //we can add any id or class name to newly created element
+
+        div.id = "title";//<div id="title">…</div>
+
+        div.className = "titleClass";//<div id="title" class="titleClass">…</div>
+        
+    </script>
+</body>
+</html>
+
+<!--
+
+Manipulating elements:
+
+1. createElement() : to create an HTML element, we use the
+createElement() method
+
+The document.createElement() accepts an HTML tag name and returns 
+a new Node with the Element type.
+
+-->
